@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to English Text Converter</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="{% static 'images/fafi.jpg' %}" type="image/jpg">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="font-family:'Times New Roman'">Speech to English Text Converter</h1>
+        <label for="language-select">Select Language:</label>
+        <select id="language-select">
+            <option value="en-US">English (US)</option>
+            <option value="hi-IN">Hindi (India)</option>
+            <option value="ta-IN">Tamil (India)</option>
+            <option value="ml-IN">Malayalam (India)</option>
+            <option value="te-IN">Telugu (India)</option>
+            <option value="kn-IN">Kannada (India)</option>
+        </select>
+        <br><br>
+        <button id="start-btn">Start Speech Recognition</button>
+        <button id="stop-btn" class="hidden">Stop</button>
+        <p id="mic-indicator" class="hidden">
+            <img id="mic-image" src="{% static 'images/mic.jpg' %}" alt="Microphone" style="width: 30px; height: 30px; vertical-align: middle;" />
+            <span id="listening-text">Listening...</span>
+        </p>
+        <p id="output"></p>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>
